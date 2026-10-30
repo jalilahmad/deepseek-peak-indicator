@@ -55,7 +55,7 @@ dependency, and the Loader reads the manifest and the patch layer.
 ```yaml
 - insert:
     - id: deepseek-peak-indicator
-      name: '@local/deepseek-peak-indicator'
+      name: '@jalilahmad.fazeli/deepseek-peak-indicator'
 ```
 
 The patch inserts one Loader row. The row id is the plugin's identity in the inventory and in the
@@ -74,7 +74,7 @@ factory in the official module-loader shape:
 
 ```js
 window.__ModuleLoader__.load({
-  id: '@local/deepseek-peak-indicator',
+  id: '@jalilahmad.fazeli/deepseek-peak-indicator',
   factory(require) {
     const React = require('react');
     const createPortal = require('react-dom').createPortal;

@@ -113,7 +113,7 @@ function renderAt(component, props, ms) {
 
 test('the bundle registers one lazy client factory with the expected id', () => {
   assert.ok(captured !== null, 'client.js must call window.__ModuleLoader__.load');
-  assert.equal(captured.id, '@local/deepseek-peak-indicator');
+  assert.equal(captured.id, '@jalilahmad.fazeli/deepseek-peak-indicator');
   assert.equal(typeof captured.factory, 'function');
   const plugin = captured.factory(requireStub);
   assert.equal(typeof plugin.apply, 'function');
@@ -143,7 +143,7 @@ test('the pure schedule core is exposed by the materialized factory', () => {
 
 test('manifest, patch, locales and icon are well-formed', () => {
   const pkg = JSON.parse(readFileSync(manifestUrl, 'utf8'));
-  assert.equal(pkg.name, '@local/deepseek-peak-indicator');
+  assert.equal(pkg.name, '@jalilahmad.fazeli/deepseek-peak-indicator');
   assert.equal(pkg.type, 'module');
   assert.equal(pkg.dsh.bundle.patch, './cordis.patch.yml');
   assert.equal(pkg.dsh.client.platform, 'web');
@@ -154,7 +154,7 @@ test('manifest, patch, locales and icon are well-formed', () => {
 
   const patch = readFileSync(new URL('../cordis.patch.yml', import.meta.url), 'utf8');
   assert.match(patch, /id: deepseek-peak-indicator/);
-  assert.match(patch, /name: '@local\/deepseek-peak-indicator'/);
+  assert.match(patch, /name: '@jalilahmad\.fazeli\/deepseek-peak-indicator'/);
 
   const en = JSON.parse(readFileSync(new URL('../locale/en.json', import.meta.url), 'utf8'));
   const zh = JSON.parse(readFileSync(new URL('../locale/zh.json', import.meta.url), 'utf8'));

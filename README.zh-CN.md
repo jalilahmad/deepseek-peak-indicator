@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme-banner.png" alt="DeepSeek 峰谷时段指示器 —— 随时了解 DeepSeek API 处于峰时还是谷时定价。" />
+  <img src="https://raw.githubusercontent.com/jalilahmad/deepseek-peak-indicator/main/assets/readme-banner.png" alt="DeepSeek 峰谷时段指示器 —— 随时了解 DeepSeek API 处于峰时还是谷时定价。" />
 </p>
 
 # DeepSeek 峰谷时段指示器
@@ -28,6 +28,16 @@
 **需要 DeepSeek Harness Desktop v0.2.1-rc.5**——本版本正是针对该版本构建并验证的。无需额外的
 运行时、构建步骤或 npm 依赖。
 
+包名为 `@jalilahmad.fazeli/deepseek-peak-indicator`。可从 npm 或直接从 GitHub 安装：
+
+### 从 npm 安装
+
+```powershell
+dsh plugin --profile web add @jalilahmad.fazeli/deepseek-peak-indicator
+```
+
+### 从 GitHub 安装
+
 ```powershell
 dsh plugin --profile web add github:jalilahmad/deepseek-peak-indicator
 ```
@@ -40,7 +50,8 @@ dsh plugin --profile web add github:jalilahmad/deepseek-peak-indicator
 
 1. 在 Harness 侧边栏打开 **Plugins**。
 2. 选择 **Add plugin** → **Install a third-party plugin**。
-3. 输入规格 `github:jalilahmad/deepseek-peak-indicator` 并安装。
+3. 输入 npm 包名 `@jalilahmad.fazeli/deepseek-peak-indicator`，或 GitHub 规格
+   `github:jalilahmad/deepseek-peak-indicator` 并安装。
 4. 确认该 bundle 已切换为 **On**，然后重新加载页面。
 
 </details>
@@ -208,8 +219,9 @@ Next transition cannot be reliably determined.
   在外壳确实渲染页脚的 56 px 窄栏中，会使用只有圆点的紧凑形态。
 - **2027 年节假日数据。** 在官方公告发布并更新日历之前，2027 年的工作日峰时窗口会显示
   **UNKNOWN**。周末和非峰时小时仍然确定。
-- **包名。** 该 bundle 保留其已安装身份 `@local/deepseek-peak-indicator`；它从 GitHub 分发，
-  未发布到 npm。安装命令使用的是仓库规格。
+- **包标识。** 公开包名为 `@jalilahmad.fazeli/deepseek-peak-indicator`；它也是 npm 与 GitHub
+  安装共同使用的 Harness 模块/包标识。重命名前安装的旧包（`@local/deepseek-peak-indicator`）应先
+  卸载再重新安装。插件行 id `deepseek-peak-indicator` 与所有运行时行为保持不变。
 - **截图。** 已提供三张真实截图；PEAK 与 UNKNOWN 截图需要真实的时段条件，仍待补充。见
   [截图](#截图) 与
   [SCREENSHOTS_NEEDED.md](docs/screenshots/SCREENSHOTS_NEEDED.md)。
@@ -218,17 +230,20 @@ Next transition cannot be reliably determined.
 
 ## 更新与卸载
 
-**更新**——DeepSeek Harness 不会就地更新任意从 GitHub 安装的 bundle：
+**更新**——DeepSeek Harness 不会就地更新任意已安装的 bundle：
 
 1. 打开 **Plugins**，找到 **DeepSeek Peak Indicator**，选择 **Remove**
-   （或执行 `dsh plugin --profile web remove @local/deepseek-peak-indicator`）。
+   （或执行 `dsh plugin --profile web remove @jalilahmad.fazeli/deepseek-peak-indicator`）。
 2. 用[安装](#安装)中的同一条命令重新安装。
 3. 重新加载 Web GUI。
+
+如果你安装过 npm 发布之前的旧版本，请先卸载旧包：
+`dsh plugin --profile web remove @local/deepseek-peak-indicator`。
 
 **卸载**——**Plugins** → **DeepSeek Peak Indicator** → **Remove**，或：
 
 ```powershell
-dsh plugin --profile web remove @local/deepseek-peak-indicator
+dsh plugin --profile web remove @jalilahmad.fazeli/deepseek-peak-indicator
 ```
 
 该插件除自身 bundle 之外不存储任何内容，因此卸载后不会留下数据。

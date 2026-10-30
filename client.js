@@ -27,7 +27,7 @@
  * Source: https://api-docs.deepseek.com/quick_start/pricing/
  */
 window.__ModuleLoader__.load({
-  id: '@local/deepseek-peak-indicator',
+  id: '@jalilahmad.fazeli/deepseek-peak-indicator',
   factory(require) {
     'use strict';
     const React = require('react');

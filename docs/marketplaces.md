@@ -33,13 +33,14 @@ Sources checked on 2026-10-30:
 ### Repository
 
 - Repository: `https://github.com/jalilahmad/deepseek-peak-indicator`
-- Package name: `@local/deepseek-peak-indicator` (bundle name; not an npm publication)
+- npm package name: `@jalilahmad.fazeli/deepseek-peak-indicator` (public release prepared; not yet published)
 - Version: `1.0.0`
 - License: MIT
 - Author: Jalil Ahmad Fazeli — `https://github.com/jalilahmad`
 - Tested runtime: DeepSeek Harness Desktop `0.2.1-rc.5` (Windows)
-- Install command (tested form):
-  `dsh plugin --profile web add github:jalilahmad/deepseek-peak-indicator`
+- Install commands:
+  - npm: `dsh plugin --profile web add @jalilahmad.fazeli/deepseek-peak-indicator`
+  - GitHub: `dsh plugin --profile web add github:jalilahmad/deepseek-peak-indicator`
 
 ### GitHub repository description
 
@@ -162,19 +163,27 @@ Do not claim the plugin is listed on dshplugin.io until the site shows it.
 
 ---
 
-## 6. npm publication (optional, not done)
+## 6. npm publication (prepared, not performed)
 
-Not publishing to npm is fine for listing and for GitHub installation. If npm publication is ever
-desired:
+The package is prepared for public npm release as
+`@jalilahmad.fazeli/deepseek-peak-indicator`, but **no publish has been performed**.
 
-- the package must be renamed (the current `@local/` scope is not an owned npm scope and describes a
-  source bundle, not a registry package);
-- renaming changes the installed plugin identity, so it must be treated as a deliberate release
-  decision with reinstall instructions;
-- the published package's `repository` field must point back to
-  `https://github.com/jalilahmad/deepseek-peak-indicator`;
-- the `files` list already contains only runtime files, so a prebuilt package would not include the
-  tests or the sync tool.
+- The name is syntactically valid and was free on the public registry when checked (2026-10-30).
+  Scope ownership is tied to the npm account that publishes; confirm the logged-in account is
+  `jalilahmad.fazeli` (`npm whoami`) before publishing. Do not expose tokens.
+- The package name is also the Harness module/package identity: `package.json`,
+  `cordis.patch.yml` and the `client.js` module id were updated together. The plugin row id
+  `deepseek-peak-indicator` and all runtime behaviour are unchanged.
+- `private` was removed and `publishConfig.access` is `public` (required for a scoped package).
+- Both install methods resolve the same package: npm name or GitHub spec.
+- Pre-npm installations under `@local/deepseek-peak-indicator` must be removed before installing the
+  renamed package.
+- The `repository`, `homepage`, `bugs`, `license`, `author` and `keywords` fields are set.
+- The `files` list contains only runtime files plus the runtime icon; tests, tools, docs, the README
+  banner and screenshots are excluded (npm still includes the READMEs, LICENSE and package.json).
+- Publish only after explicit approval, for example:
+  `npm publish --access public --registry https://registry.npmjs.org/`
+  (never run by this release preparation).
 
 No npm publication has been performed.
 
@@ -182,18 +191,19 @@ No npm publication has been performed.
 
 ## 7. Manual steps (in order)
 
-1. The public repository `jalilahmad/deepseek-peak-indicator` already exists and the release tree is
-   pushed.
-2. Commit and push the new screenshot files and the documentation updates
-   (`docs/screenshots/01-indicator-sidebar.png`, `03-popover-offpeak.png`,
-   `05-plugin-manager.png`, plus the README/CHANGELOG/screenshot-doc changes).
-3. Confirm the repository **description** and topics: `deepseek-harness`, `dsh-plugin`,
+1. Review and commit the npm-release changes locally (not pushed by the preparation).
+2. Publish to npm **after explicit approval** (see section 6); confirm `npm whoami` first and never
+   expose tokens.
+3. Verify the published package page and the exact install command
+   (`dsh plugin --profile web add @jalilahmad.fazeli/deepseek-peak-indicator`).
+4. Push the commit to GitHub (both install methods then point at the same package).
+5. Confirm the repository **description** and topics: `deepseek-harness`, `dsh-plugin`,
    `deepseek`, `peak-indicator`, `usage-pricing`.
-4. Add the remaining PEAK and UNKNOWN screenshots when the real states occur (see the screenshot
+6. Add the remaining PEAK and UNKNOWN screenshots when the real states occur (see the screenshot
    instructions), and add their paths back to `screenshots.json`. This is optional for listing.
-5. Optionally create a GitHub Release for `v1.0.0` (source zip/tarball is enough; a prebuilt `.tgz`
+7. Optionally create a GitHub Release for `v1.0.0` (source zip/tarball is enough; a prebuilt `.tgz`
    is optional).
-6. After the repository is at least 1 day old, open the awesome-dsh-plugin PR with the single YAML
+8. After the repository is at least 1 day old, open the awesome-dsh-plugin PR with the single YAML
    file from section 3.
-7. Optionally open the dshplugin.io submission issue for visibility.
-8. Do not announce that the plugin is listed until the registry PR is merged and the site shows it.
+9. Optionally open the dshplugin.io submission issue for visibility.
+10. Do not announce that the plugin is listed until the registry PR is merged and the site shows it.

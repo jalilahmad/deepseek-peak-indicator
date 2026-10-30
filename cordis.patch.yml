@@ -3,4 +3,4 @@
 # so the Loader (and the plugin inventory) knows the package.
 - insert:
     - id: deepseek-peak-indicator
-      name: '@local/deepseek-peak-indicator'
+      name: '@jalilahmad.fazeli/deepseek-peak-indicator'

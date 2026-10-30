@@ -21,9 +21,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Prepared the public npm release under `@jalilahmad.fazeli/deepseek-peak-indicator` (version kept at
+  `1.0.0`). The Harness module/package identity was updated together in `package.json`,
+  `cordis.patch.yml` and the `client.js` module id; the plugin row id
+  `deepseek-peak-indicator` and all runtime behaviour are unchanged. Both npm and GitHub installs
+  now resolve the same package. Pre-npm installations under `@local/deepseek-peak-indicator` should
+  be removed and reinstalled. No npm publication has been performed.
 - Redesigned all three READMEs around a hero banner with installation moved to the top, a clearer
   feature/architecture story, and the same verified technical information in English, Persian and
-  Simplified Chinese.
+  Simplified Chinese. Installation instructions now cover both npm and GitHub.
 - Marketplace submission metadata now uses the new 512×512 brand icon. The **runtime plugin icon
   also now uses `assets/icon-512.png`** (58.6 KiB, within DSH's 256 KiB limit) through the existing
   `./icon` manifest export; `icon.svg` is retained as the previous icon/backup. The new icon was

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme-banner.png" alt="نشانگر پیک DeepSeek — بدانید قیمت‌گذاری API DeepSeek در حالت پیک است یا خارج از پیک." />
+  <img src="https://raw.githubusercontent.com/jalilahmad/deepseek-peak-indicator/main/assets/readme-banner.png" alt="نشانگر پیک DeepSeek — بدانید قیمت‌گذاری API DeepSeek در حالت پیک است یا خارج از پیک." />
 </p>
 
 # نشانگر پیک DeepSeek
@@ -28,6 +28,16 @@
 **نیازمند DeepSeek Harness Desktop v0.2.1-rc.5** — همان نسخه‌ای که این انتشار بر اساس آن ساخته و آزمون
 شده است. هیچ زمان اجرای اضافی، مرحله build یا وابستگی npm لازم نیست.
 
+نام بسته `@jalilahmad.fazeli/deepseek-peak-indicator` است. آن را از npm یا مستقیماً از GitHub نصب کنید:
+
+### نصب از npm
+
+```powershell
+dsh plugin --profile web add @jalilahmad.fazeli/deepseek-peak-indicator
+```
+
+### نصب از GitHub
+
 ```powershell
 dsh plugin --profile web add github:jalilahmad/deepseek-peak-indicator
 ```
@@ -40,7 +50,8 @@ dsh plugin --profile web add github:jalilahmad/deepseek-peak-indicator
 
 1. در نوار کناری Harness، **Plugins** را باز کنید.
 2. **Add plugin** → **Install a third-party plugin** را انتخاب کنید.
-3. مشخصه `github:jalilahmad/deepseek-peak-indicator` را وارد کنید و نصب را انجام دهید.
+3. نام بسته npm یعنی `@jalilahmad.fazeli/deepseek-peak-indicator` یا مشخصه GitHub یعنی
+   `github:jalilahmad/deepseek-peak-indicator` را وارد کنید و نصب را انجام دهید.
 4. مطمئن شوید بسته روی **On** است، سپس صفحه را دوباره بارگذاری کنید.
 
 </details>
@@ -222,8 +233,10 @@ Next transition cannot be reliably determined.
   ریل 56 px به کار می‌رود، جایی که پوسته پاورقی را رندر می‌کند.
 - **داده تعطیلات 2027.** بازه‌های پیک روزهای هفته در 2027 تا زمان انتشار اطلاعیه رسمی و به‌روزرسانی
   تقویم **UNKNOWN** نشان می‌دهند. آخر هفته‌ها و ساعت‌های خارج از پیک قطعی می‌مانند.
-- **نام بسته.** بسته همان هویت نصب‌شده خود، `@local/deepseek-peak-indicator`، را نگه می‌دارد؛ از GitHub
-  توزیع می‌شود، نه از npm. دستور نصب از مشخصه مخزن استفاده می‌کند.
+- **هویت بسته.** بستهٔ عمومی `@jalilahmad.fazeli/deepseek-peak-indicator` است؛ همین شناسهٔ
+  ماژول/بستهٔ Harness برای نصب npm و GitHub به کار می‌رود. نصب‌های پیش از این تغییر نام (با
+  `@local/deepseek-peak-indicator`) باید ابتدا حذف و سپس دوباره نصب شوند. شناسهٔ ردیف افزونه
+  `deepseek-peak-indicator` و همهٔ رفتارهای زمان اجرا بدون تغییر باقی مانده‌اند.
 - **تصاویر.** سه تصویر واقعی عرضه شده است؛ تصاویر PEAK و UNKNOWN به شرایط واقعی زمان‌بندی نیاز دارند و
   هنوز در انتظار ضبط‌اند. به [تصاویر](#تصاویر) و
   [SCREENSHOTS_NEEDED.md](docs/screenshots/SCREENSHOTS_NEEDED.md) مراجعه کنید.
@@ -232,17 +245,20 @@ Next transition cannot be reliably determined.
 
 ## به‌روزرسانی و حذف نصب
 
-**به‌روزرسانی** — DeepSeek Harness بسته‌های نصب‌شده از GitHub را به‌صورت درجا به‌روزرسانی نمی‌کند:
+**به‌روزرسانی** — DeepSeek Harness بسته‌های نصب‌شده را به‌صورت درجا به‌روزرسانی نمی‌کند:
 
 1. **Plugins** را باز کنید، **DeepSeek Peak Indicator** را پیدا کنید و **Remove** را بزنید
-   (یا `dsh plugin --profile web remove @local/deepseek-peak-indicator` را اجرا کنید).
+   (یا `dsh plugin --profile web remove @jalilahmad.fazeli/deepseek-peak-indicator` را اجرا کنید).
 2. از همان دستور بخش [نصب](#نصب) دوباره نصب کنید.
 3. Web GUI را دوباره بارگذاری کنید.
+
+اگر نسخهٔ پیش از npm را نصب کرده بودید، ابتدا بسته قدیمی را حذف کنید:
+`dsh plugin --profile web remove @local/deepseek-peak-indicator`.
 
 **حذف نصب** — **Plugins** → **DeepSeek Peak Indicator** → **Remove**، یا:
 
 ```powershell
-dsh plugin --profile web remove @local/deepseek-peak-indicator
+dsh plugin --profile web remove @jalilahmad.fazeli/deepseek-peak-indicator
 ```
 
 افزونه چیزی بیرون از بسته خود ذخیره نمی‌کند، بنابراین حذف نصب هیچ داده‌ای بر جای نمی‌گذارد.

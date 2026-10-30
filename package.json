@@ -1,10 +1,12 @@
 {
-  "name": "@local/deepseek-peak-indicator",
+  "name": "@jalilahmad.fazeli/deepseek-peak-indicator",
   "version": "1.0.0",
-  "private": true,
   "type": "module",
   "description": "Sidebar-foot DeepSeek API peak / off-peak pricing indicator with a minimal countdown popover.",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "author": {
     "name": "Jalil Ahmad Fazeli",
     "email": "jalilahmad.fazeli@gmail.com",

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme-banner.png" alt="DeepSeek Peak Indicator — know when DeepSeek API pricing is at Peak or Off-Peak." />
+  <img src="https://raw.githubusercontent.com/jalilahmad/deepseek-peak-indicator/main/assets/readme-banner.png" alt="DeepSeek Peak Indicator — know when DeepSeek API pricing is at Peak or Off-Peak." />
 </p>
 
 # DeepSeek Peak Indicator
@@ -28,6 +28,17 @@ computed locally from the clock and a bundled, verified Chinese holiday calendar
 **Requires DeepSeek Harness Desktop v0.2.1-rc.5** — the version this release is built and tested
 against. No extra runtime, build step or npm dependency is needed.
 
+The package is `@jalilahmad.fazeli/deepseek-peak-indicator`. Install it from npm or directly from
+GitHub:
+
+### From npm
+
+```powershell
+dsh plugin --profile web add @jalilahmad.fazeli/deepseek-peak-indicator
+```
+
+### From GitHub
+
 ```powershell
 dsh plugin --profile web add github:jalilahmad/deepseek-peak-indicator
 ```
@@ -40,7 +51,8 @@ HMR a page refresh is usually enough.
 
 1. Open **Plugins** in the Harness sidebar.
 2. Choose **Add plugin** → **Install a third-party plugin**.
-3. Enter the spec `github:jalilahmad/deepseek-peak-indicator` and install.
+3. Enter the npm package name `@jalilahmad.fazeli/deepseek-peak-indicator`, or the GitHub spec
+   `github:jalilahmad/deepseek-peak-indicator`.
 4. Make sure the bundle is switched **On**, then reload the page.
 
 </details>
@@ -224,8 +236,10 @@ The complete design, status algorithm, transition search and cleanup rules are i
   dot-only compact form is used in the 56 px rail where the shell renders the footer.
 - **2027 holiday data.** 2027 weekday peak windows show **UNKNOWN** until the official notice is
   published and the calendar is updated. Weekends and off-hours remain certain.
-- **Package name.** The bundle keeps its installed identity `@local/deepseek-peak-indicator`; it is
-  distributed from GitHub, not published to npm. The install command uses the repository spec.
+- **Package identity.** The public package is `@jalilahmad.fazeli/deepseek-peak-indicator`; this is
+  also the Harness module/package identity used by both npm and GitHub installs. Installations made
+  before this rename (under `@local/deepseek-peak-indicator`) should be removed first and then
+  reinstalled. The plugin row id `deepseek-peak-indicator` and all runtime behavior are unchanged.
 - **Screenshots.** Three real captures are shipped; PEAK and UNKNOWN captures require genuine
   schedule conditions and remain pending. See
   [Screenshots](#screenshots) and [SCREENSHOTS_NEEDED.md](docs/screenshots/SCREENSHOTS_NEEDED.md).
@@ -234,17 +248,20 @@ The complete design, status algorithm, transition search and cleanup rules are i
 
 ## Update and uninstall
 
-**Update** — DeepSeek Harness does not update arbitrary GitHub-installed bundles in place:
+**Update** — DeepSeek Harness does not update arbitrary installed bundles in place:
 
 1. Open **Plugins**, find **DeepSeek Peak Indicator**, and choose **Remove**
-   (or `dsh plugin --profile web remove @local/deepseek-peak-indicator`).
+   (or `dsh plugin --profile web remove @jalilahmad.fazeli/deepseek-peak-indicator`).
 2. Reinstall from the same command in [Install](#install).
 3. Reload the Web GUI.
+
+If you installed the earlier pre-npm bundle, remove the old package first:
+`dsh plugin --profile web remove @local/deepseek-peak-indicator`.
 
 **Uninstall** — **Plugins** → **DeepSeek Peak Indicator** → **Remove**, or:
 
 ```powershell
-dsh plugin --profile web remove @local/deepseek-peak-indicator
+dsh plugin --profile web remove @jalilahmad.fazeli/deepseek-peak-indicator
 ```
 
 The plugin stores nothing outside its own bundle, so uninstalling leaves no data behind.
