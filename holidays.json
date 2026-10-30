@@ -1,0 +1,46 @@
+{
+  "comment": "Official Chinese public holidays used by the DeepSeek peak/off-peak indicator. Edit this file, then run: node tools/sync-holidays.mjs (from the bundle directory). The script writes the same data into client.js between the HOLIDAY_CALENDAR markers. Add a year only from the State Council notice (gov.cn); set verified=false or omit the year when the notice is not published, and the indicator shows UNKNOWN inside weekday peak windows instead of guessing.",
+  "timeZone": "Asia/Shanghai",
+  "updated": "2026-10-30",
+  "years": {
+    "2025": {
+      "verified": true,
+      "published": true,
+      "source": "https://www.gov.cn/zhengce/content/202411/content_6986382.htm",
+      "titleZh": "国务院办公厅关于2025年部分节假日安排的通知",
+      "ranges": [
+        { "name": "New Year's Day", "nameZh": "元旦", "start": "2025-01-01", "end": "2025-01-01" },
+        { "name": "Spring Festival", "nameZh": "春节", "start": "2025-01-28", "end": "2025-02-04" },
+        { "name": "Qingming Festival", "nameZh": "清明节", "start": "2025-04-04", "end": "2025-04-06" },
+        { "name": "Labour Day", "nameZh": "劳动节", "start": "2025-05-01", "end": "2025-05-05" },
+        { "name": "Dragon Boat Festival", "nameZh": "端午节", "start": "2025-05-31", "end": "2025-06-02" },
+        { "name": "National Day and Mid-Autumn Festival", "nameZh": "国庆节、中秋节", "start": "2025-10-01", "end": "2025-10-08" }
+      ],
+      "makeupWorkdays": ["2025-01-26", "2025-02-08", "2025-04-27", "2025-09-28", "2025-10-11"]
+    },
+    "2026": {
+      "verified": true,
+      "published": true,
+      "source": "https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm",
+      "titleZh": "国务院办公厅关于2026年部分节假日安排的通知",
+      "ranges": [
+        { "name": "New Year's Day", "nameZh": "元旦", "start": "2026-01-01", "end": "2026-01-03" },
+        { "name": "Spring Festival", "nameZh": "春节", "start": "2026-02-15", "end": "2026-02-23" },
+        { "name": "Qingming Festival", "nameZh": "清明节", "start": "2026-04-04", "end": "2026-04-06" },
+        { "name": "Labour Day", "nameZh": "劳动节", "start": "2026-05-01", "end": "2026-05-05" },
+        { "name": "Dragon Boat Festival", "nameZh": "端午节", "start": "2026-06-19", "end": "2026-06-21" },
+        { "name": "Mid-Autumn Festival", "nameZh": "中秋节", "start": "2026-09-25", "end": "2026-09-27" },
+        { "name": "National Day", "nameZh": "国庆节", "start": "2026-10-01", "end": "2026-10-07" }
+      ],
+      "makeupWorkdays": ["2026-01-04", "2026-02-14", "2026-02-28", "2026-05-09", "2026-09-20", "2026-10-10"]
+    },
+    "2027": {
+      "verified": false,
+      "published": false,
+      "source": "",
+      "note": "The State Council notice for 2027 was not published as of 2026-10-30. This is UNKNOWN, not 'no holidays': the indicator shows UNKNOWN inside weekday peak windows until this year is filled in from the official notice.",
+      "ranges": [],
+      "makeupWorkdays": []
+    }
+  }
+}

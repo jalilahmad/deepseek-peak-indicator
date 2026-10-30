@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "DeepSeek 峰谷时段指示器",
+    "description": "在侧边栏底部显示 DeepSeek API 当前处于高峰还是空闲计价时段，点击查看极简倒计时。"
+  }
+}

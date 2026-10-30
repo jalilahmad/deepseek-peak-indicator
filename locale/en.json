@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "DeepSeek Peak Indicator",
+    "description": "Shows DeepSeek API peak or off-peak pricing in the sidebar foot, with a minimal click-to-open countdown."
+  }
+}

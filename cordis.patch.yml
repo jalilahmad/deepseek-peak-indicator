@@ -1,0 +1,6 @@
+# Bundle patch. The whole feature is the browser half, published through
+# package.json `exports["./client"]` + `dsh.client`; this row only has to exist
+# so the Loader (and the plugin inventory) knows the package.
+- insert:
+    - id: deepseek-peak-indicator
+      name: '@local/deepseek-peak-indicator'
