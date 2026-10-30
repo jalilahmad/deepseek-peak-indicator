@@ -97,7 +97,7 @@ category: usage
 description:
   en: "DeepSeek API peak/off-peak pricing indicator in the sidebar footer with a minimal hours-and-minutes countdown popover; the Chinese holiday calendar is bundled and verified offline, and unverified years show UNKNOWN instead of guessing."
   zh: "侧边栏底部的 DeepSeek API 峰谷时段指示器，点击显示极简的小时/分钟倒计时；内置离线且经过核验的中国法定节假日日历，未核验年份显示 UNKNOWN 而不是猜测。"
-icon: https://raw.githubusercontent.com/jalilahmad/deepseek-peak-indicator/main/assets/icon-180.png
+icon: https://raw.githubusercontent.com/jalilahmad/deepseek-peak-indicator/main/assets/icon-512.png
 ```
 
 Notes:
@@ -105,9 +105,12 @@ Notes:
 - The description contains `: ` after the repository is live? No — the YAML above quotes the
   descriptions, so it is safe either way. Keep the quotes.
 - `icon` is optional. A raster image (`png`/`jpg`/`webp`) hosted on GitHub is required; the SVG
-  plugin icon is not accepted for the storefront tile, so a 180×180 PNG is provided at
-  [`assets/icon-180.png`](../assets/icon-180.png). Remove the `icon` line if you prefer the author
-  avatar fallback.
+  plugin icon is not accepted for the storefront tile. The current brand tile is the 512×512
+  [`assets/icon-512.png`](../assets/icon-512.png); the earlier 180×180
+  [`assets/icon-180.png`](../assets/icon-180.png) is retained as a smaller fallback. Remove the
+  `icon` line if you prefer the author avatar fallback.
+- The README hero banner [`assets/readme-banner.png`](../assets/readme-banner.png) is GitHub
+  presentation only; it is not used as a plugin or marketplace icon.
 - A `tarball:` field is optional and only needed if the repository cannot install from source. This
   repository installs from source, so it is omitted. If a GitHub Release with a prebuilt `.tgz` is
   added later, it may be declared here.

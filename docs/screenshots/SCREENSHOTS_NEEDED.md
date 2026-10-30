@@ -67,7 +67,7 @@ the system clock, the plugin schedule or the holiday data.
 1. Save the files here with the exact names `02-popover-peak.png` and `04-popover-unknown.png`
    (same `1920 × 951` content crop is recommended).
 2. Restore their image references in all three READMEs (`README.md`, `README.fa.md`,
-   `README.zh-CN.md`) in section 16, replacing the current “pending” paragraph.
+   `README.zh-CN.md`) in the Screenshots section, replacing the current “pending” paragraph.
 3. Add both paths to [`../../screenshots.json`](../../screenshots.json) so marketplace storefronts
    show them (1–8 images allowed).
 4. Update this file's status table and the `CHANGELOG.md` entry.

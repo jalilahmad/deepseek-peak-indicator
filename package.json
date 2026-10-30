@@ -37,7 +37,7 @@
     ".": "./index.js",
     "./client": "./client.js",
     "./locale/*.json": "./locale/*.json",
-    "./icon": "./icon.svg",
+    "./icon": "./assets/icon-512.png",
     "./cordis.patch.yml": "./cordis.patch.yml",
     "./package.json": "./package.json"
   },
@@ -47,7 +47,8 @@
     "cordis.patch.yml",
     "holidays.json",
     "locale/*.json",
-    "icon.svg"
+    "icon.svg",
+    "assets/icon-512.png"
   ],
   "scripts": {
     "test": "node --test test/schedule.test.mjs",

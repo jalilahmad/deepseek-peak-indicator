@@ -343,11 +343,25 @@ no stored user data. The only data the plugin reads is the local clock and the b
 | [`holidays.json`](../holidays.json) | Editable, human-reviewed Chinese public holiday calendar (verified years and sources). |
 | [`tools/sync-holidays.mjs`](../tools/sync-holidays.mjs) | Zero-dependency script that regenerates the inline calendar block from `holidays.json`. |
 | [`locale/en.json`](../locale/en.json), [`locale/zh.json`](../locale/zh.json) | Plugin display metadata (title/description) shown by the Plugin Manager and Settings. |
-| [`icon.svg`](../icon.svg) | Original plugin icon, exported as `./icon`. |
+| [`icon.svg`](../icon.svg) | Previous plugin icon, retained as a backup after the runtime icon moved to the new PNG. |
+| [`assets/readme-banner.png`](../assets/readme-banner.png) | README hero banner (GitHub presentation only; never loaded by the Harness runtime). |
+| [`assets/icon-512.png`](../assets/icon-512.png) | **Runtime plugin icon**, exported as `./icon` (512×512 PNG, 58.6 KiB), plus GitHub/marketplace brand use. |
+| [`assets/icon-180.png`](../assets/icon-180.png) | Smaller 180×180 raster marketplace icon, retained as a fallback. |
 | [`test/schedule.test.mjs`](../test/schedule.test.mjs) | 22 Node tests: schedule, transitions, formatting, popover model, rendered forms and registration. |
 | [`docs/architecture.md`](architecture.md) | This document. |
 | [`docs/marketplaces.md`](marketplaces.md) | Marketplace releases/submission preparation. |
 | [`docs/screenshots/`](screenshots/) | Screenshot capture instructions and the expected real captures. |
+
+### Runtime plugin icon
+
+DSH reads the package-root manifest `icon` or the exported `./icon` for plugin cards, details and
+component rows. This package declares no top-level `icon`; it exports `./icon → ./assets/icon-512.png`,
+a 512×512 PNG of 58.6 KiB — inside the package and well under the documented 256 KiB icon limit.
+The icon was verified live in the Plugin Manager after reinstalling the same bundle.
+
+`icon.svg` is retained as the previous runtime icon and backup. `assets/icon-180.png` remains a
+smaller raster fallback for storefronts that want a 180×180 tile. `assets/readme-banner.png` is
+GitHub documentation only and is not part of the runtime icon path.
 
 ---
 

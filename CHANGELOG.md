@@ -9,12 +9,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- GitHub presentation assets: `assets/readme-banner.png` (README hero banner) and
+  `assets/icon-512.png` (square brand/storefront icon), with the previous 180×180 marketplace icon
+  retained as a fallback.
 - Real, privacy-redacted screenshots captured from the running DeepSeek Harness Desktop
   v0.2.1-rc.5: the full application with the sidebar indicator, the OFF-PEAK popover, and the
   Plugin Manager entry (`docs/screenshots/01`, `03`, `05`).
 - Screenshot status and capture instructions for the remaining PEAK and UNKNOWN states in
   [`docs/screenshots/SCREENSHOTS_NEEDED.md`](docs/screenshots/SCREENSHOTS_NEEDED.md). Those two
   states require real schedule conditions and were not fabricated.
+
+### Changed
+
+- Redesigned all three READMEs around a hero banner with installation moved to the top, a clearer
+  feature/architecture story, and the same verified technical information in English, Persian and
+  Simplified Chinese.
+- Marketplace submission metadata now uses the new 512×512 brand icon. The **runtime plugin icon
+  also now uses `assets/icon-512.png`** (58.6 KiB, within DSH's 256 KiB limit) through the existing
+  `./icon` manifest export; `icon.svg` is retained as the previous icon/backup. The new icon was
+  verified live in the Plugin Manager after reinstalling the same bundle.
 
 ## [1.0.0] - 2026-10-30
 
