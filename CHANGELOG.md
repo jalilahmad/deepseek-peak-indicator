@@ -7,7 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Nothing yet. Planned work is tracked in GitHub Issues.
+### Added
+
+- Real, privacy-redacted screenshots captured from the running DeepSeek Harness Desktop
+  v0.2.1-rc.5: the full application with the sidebar indicator, the OFF-PEAK popover, and the
+  Plugin Manager entry (`docs/screenshots/01`, `03`, `05`).
+- Screenshot status and capture instructions for the remaining PEAK and UNKNOWN states in
+  [`docs/screenshots/SCREENSHOTS_NEEDED.md`](docs/screenshots/SCREENSHOTS_NEEDED.md). Those two
+  states require real schedule conditions and were not fabricated.
 
 ## [1.0.0] - 2026-10-30
 

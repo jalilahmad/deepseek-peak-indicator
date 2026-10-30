@@ -370,8 +370,9 @@ installed dependencies. The suite verifies, among other things:
 - **Compatibility:** only **DeepSeek Harness Desktop v0.2.1-rc.5** has been tested. Other DSH
   versions, other clients and other platforms are not claimed compatible; the manifest pins the
   tested DSH version.
-- **Screenshots:** the visual captures in [Screenshots](#16-screenshots) are pending in this
-  checkout; see [`docs/screenshots/SCREENSHOTS_NEEDED.md`](docs/screenshots/SCREENSHOTS_NEEDED.md).
+- **Screenshots:** three of the five captures are shipped (overview, OFF-PEAK popover, Plugin
+  Manager); the PEAK and UNKNOWN captures still require real schedule conditions. See
+  [Screenshots](#16-screenshots).
 - **Package name:** the package keeps the name `@local/deepseek-peak-indicator` it was created
   with. The `@local/` scope indicates a source (GitHub) bundle rather than an npm-published package;
   the install command above uses the repository spec, not the package name. Renaming it would change
@@ -402,30 +403,28 @@ installed dependencies. The suite verifies, among other things:
 
 ## 16. Screenshots
 
-> **Capture pending:** the images below are the exact files the release expects. They were not
-> captured in the environment that prepared this release. Once the real captures are added under
-> [`docs/screenshots/`](docs/screenshots/), these references resolve and no README edit is needed.
-> Capture instructions: [`docs/screenshots/SCREENSHOTS_NEEDED.md`](docs/screenshots/SCREENSHOTS_NEEDED.md).
+These are real screenshots of DeepSeek Harness Desktop v0.2.1-rc.5 running this plugin. Workspace
+names and session titles are blurred for privacy.
 
 **Full application — indicator in the sidebar footer**
 
 ![Full DeepSeek Harness window with the OFF-PEAK indicator in the sidebar footer](docs/screenshots/01-indicator-sidebar.png)
 
-**PEAK with the minimal popover**
-
-![PEAK indicator with the two-line popover reading “Off-Peak starts in: 2h 13m”](docs/screenshots/02-popover-peak.png)
-
 **OFF-PEAK with the minimal popover**
 
-![OFF-PEAK indicator with the two-line popover reading “Peak starts in: 61h 29m”](docs/screenshots/03-popover-offpeak.png)
+![OFF-PEAK indicator with the two-line popover reading “Peak starts in: 60h 35m”](docs/screenshots/03-popover-offpeak.png)
 
-**UNKNOWN state**
+**Plugin entry in the Plugin Manager**
 
-![UNKNOWN indicator with the two-line popover reading “Next transition cannot be reliably determined.”](docs/screenshots/04-popover-unknown.png)
+![DeepSeek Peak Indicator entry in the Harness Plugins page, switched on](docs/screenshots/05-plugin-manager.png)
 
-**Plugin entry in the Plugin Manager (optional)**
-
-![DeepSeek Peak Indicator entry in the Harness Plugins page](docs/screenshots/05-plugin-manager.png)
+The **PEAK** and **UNKNOWN** captures are still pending because those states need real schedule
+conditions that did not exist at capture time: PEAK occurs only in the official weekday peak
+windows, and UNKNOWN only when the current year's Chinese holiday calendar is not verified. They
+will be added after the next real PEAK window; see
+[`docs/screenshots/SCREENSHOTS_NEEDED.md`](docs/screenshots/SCREENSHOTS_NEEDED.md) for the exact
+conditions and capture steps. The minimal popover format for both states is documented in
+[The minimal popover](#5-the-minimal-popover).
 
 ## 17. Author and repository
 

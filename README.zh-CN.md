@@ -345,8 +345,7 @@ fail 0
   确定。
 - **兼容性：** 仅测试过 **DeepSeek Harness Desktop v0.2.1-rc.5**。不声称兼容其他 DSH 版本、
   其他客户端和其他平台；清单固定了已测试的 DSH 版本。
-- **截图：** [截图](#16-截图) 中的视觉截图在当前检出版本中尚待补充；见
-  [`docs/screenshots/SCREENSHOTS_NEEDED.md`](docs/screenshots/SCREENSHOTS_NEEDED.md)。
+- **截图：** 五张截图中已提供三张（总览、OFF-PEAK 弹出层、插件管理器）；PEAK 与 UNKNOWN 截图仍需真实时段条件。见[截图](#16-截图)。
 - **包名：** 包保留了其创建时的名称 `@local/deepseek-peak-indicator`。`@local/` 作用域表示
   这是来源（GitHub）bundle，而不是 npm 发布的包；上面的安装命令使用的是仓库规格，而非包名。
   重命名会改变现有安装的已安装身份，因此留待单独、审慎的发布决定。
@@ -371,29 +370,21 @@ fail 0
 
 ## 16. 截图
 
-> **截图待补充：** 下面的图片正是本版本所期望的文件。它们未在准备此版本的环境中捕获。一旦
-> 在 [`docs/screenshots/`](docs/screenshots/) 下添加真实截图，这些引用即可解析，无需再修改
-> README。捕获说明：[`docs/screenshots/SCREENSHOTS_NEEDED.md`](docs/screenshots/SCREENSHOTS_NEEDED.md)。
+以下是在运行本插件的 DeepSeek Harness Desktop v0.2.1-rc.5 中拍摄的真实截图。为保护隐私，工作区名称和会话标题已做模糊处理。
 
 **完整应用——侧边栏底部的指示器**
 
 ![DeepSeek Harness 完整窗口，侧边栏底部显示 OFF-PEAK 指示器](docs/screenshots/01-indicator-sidebar.png)
 
-**带极简弹出层的 PEAK**
-
-![PEAK 指示器及两行弹出层，内容为“Off-Peak starts in: 2h 13m”](docs/screenshots/02-popover-peak.png)
-
 **带极简弹出层的 OFF-PEAK**
 
-![OFF-PEAK 指示器及两行弹出层，内容为“Peak starts in: 61h 29m”](docs/screenshots/03-popover-offpeak.png)
+![OFF-PEAK 指示器及两行弹出层，内容为“Peak starts in: 60h 35m”](docs/screenshots/03-popover-offpeak.png)
 
-**UNKNOWN 状态**
+**插件管理器中的插件条目**
 
-![UNKNOWN 指示器及两行弹出层，内容为“Next transition cannot be reliably determined.”](docs/screenshots/04-popover-unknown.png)
+![Harness Plugins 页面中的 DeepSeek Peak Indicator 条目，已启用](docs/screenshots/05-plugin-manager.png)
 
-**插件管理器中的插件条目（可选）**
-
-![Harness Plugins 页面中的 DeepSeek Peak Indicator 条目](docs/screenshots/05-plugin-manager.png)
+**PEAK** 与 **UNKNOWN** 截图仍待补充，因为这两种状态需要拍摄时并不存在的真实时段条件：PEAK 只出现在官方工作日峰时窗口，UNKNOWN 只在当年中国法定节假日日历未核验时出现。它们将在下一个真实 PEAK 时段后补充；具体条件与拍摄步骤见 [`docs/screenshots/SCREENSHOTS_NEEDED.md`](docs/screenshots/SCREENSHOTS_NEEDED.md)。两种状态的极简弹出层格式见[极简弹出层](#5-极简弹出层)。
 
 ## 17. 作者与仓库
 

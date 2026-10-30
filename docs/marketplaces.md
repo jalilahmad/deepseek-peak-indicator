@@ -121,9 +121,11 @@ Notes:
 
 ### Screenshots for storefronts
 
-The repository declares [`screenshots.json`](../screenshots.json) with five images under
-`docs/screenshots/`. The images must be committed first; until then the declaration points at
-missing files. See
+The repository declares [`screenshots.json`](../screenshots.json) with the three **already
+committed** captures under `docs/screenshots/` (`01-indicator-sidebar.png`,
+`03-popover-offpeak.png`, `05-plugin-manager.png`). Two further captures (PEAK and UNKNOWN) require
+real schedule conditions and are still pending; add them to `screenshots.json` later (1–8 images are
+allowed). See
 [`docs/screenshots/SCREENSHOTS_NEEDED.md`](screenshots/SCREENSHOTS_NEEDED.md).
 
 ---
@@ -177,14 +179,15 @@ No npm publication has been performed.
 
 ## 7. Manual steps (in order)
 
-1. Create the public GitHub repository `jalilahmad/deepseek-peak-indicator`.
-2. Push this prepared tree (`README.md`, `README.fa.md`, `README.zh-CN.md`, `docs/`, the bundle files,
-   tests, license and community files).
-3. Set the repository **description** (above) and topics: `deepseek-harness`, `dsh-plugin`,
+1. The public repository `jalilahmad/deepseek-peak-indicator` already exists and the release tree is
+   pushed.
+2. Commit and push the new screenshot files and the documentation updates
+   (`docs/screenshots/01-indicator-sidebar.png`, `03-popover-offpeak.png`,
+   `05-plugin-manager.png`, plus the README/CHANGELOG/screenshot-doc changes).
+3. Confirm the repository **description** and topics: `deepseek-harness`, `dsh-plugin`,
    `deepseek`, `peak-indicator`, `usage-pricing`.
-4. Capture the real screenshots and commit them under `docs/screenshots/` (see the screenshot
-   instructions). Do this **before** submitting to the curated registry so the declared
-   `screenshots.json` resolves.
+4. Add the remaining PEAK and UNKNOWN screenshots when the real states occur (see the screenshot
+   instructions), and add their paths back to `screenshots.json`. This is optional for listing.
 5. Optionally create a GitHub Release for `v1.0.0` (source zip/tarball is enough; a prebuilt `.tgz`
    is optional).
 6. After the repository is at least 1 day old, open the awesome-dsh-plugin PR with the single YAML

@@ -1,87 +1,74 @@
-# Screenshots needed
+# Screenshots — status and remaining captures
 
-This release was prepared **without browser/screenshot control**, so no screenshots have been
-captured. No mock, simulated or fabricated UI images are committed. The READMEs already reference
-the exact files below; once the real captures are saved here, the image references resolve and no
-documentation edit is needed.
+Real screenshots are captured from the **actual running DeepSeek Harness Desktop v0.2.1-rc.5**
+(Windows) with **DeepSeek Peak Indicator 1.0.0** installed and active. No mockups or recreated UI
+were used.
 
-Capture from the **actual running DeepSeek Harness GUI** (Web GUI or Desktop window) with the plugin
-installed and active. Screenshots must show the real plugin UI, not a mockup or a manually drawn
-image.
+Captured on **2026-10-30** from the live application window.
 
 ---
 
-## Files to create
+## 1. Captured (shipped in the repository)
 
-Save all files in this directory (`docs/screenshots/`) with exactly these names:
+All images are `1920 × 951` PNG, captured at the application's native resolution (125% display
+scale, physical pixels) and cropped to the application content area.
 
-| File | What it must show | Suggested state |
+| File | Status | What it shows |
 | --- | --- | --- |
-| `01-indicator-sidebar.png` | Full application window with the expanded sidebar; the indicator pill with its colored dot is visible in the sidebar footer beside Settings. No popover open. | Any current state (OFF-PEAK is the easiest) |
-| `02-popover-peak.png` | The indicator in **PEAK** state with the minimal two-line popover open: `🔴 PEAK` / `Off-Peak starts in: Xh Ym`. | A weekday inside 01:00–04:00 or 06:00–10:00 UTC that is not a verified Chinese holiday |
-| `03-popover-offpeak.png` | The indicator in **OFF-PEAK** state with the minimal two-line popover open: `🟢 OFF-PEAK` / `Peak starts in: Xh Ym`. | A weekend, a Chinese public holiday, or any hour outside the peak windows |
-| `04-popover-unknown.png` | The indicator in **UNKNOWN** state with the popover open: `⚪ UNKNOWN` / `Next transition cannot be reliably determined.` | A weekday inside a peak window while the current year's holiday calendar is not verified (see below) |
-| `05-plugin-manager.png` | The **Plugins** page showing the “DeepSeek Peak Indicator” bundle/row installed and switched on. | Any time after installation |
+| `01-indicator-sidebar.png` | ✅ Captured | Full Harness window on a clean New Session page; the green-dot **OFF-PEAK** indicator sits in the expanded sidebar footer. |
+| `03-popover-offpeak.png` | ✅ Captured | The real **OFF-PEAK** state with its minimal two-line popover open: `● OFF-PEAK` / `Peak starts in: 60h 35m`. |
+| `05-plugin-manager.png` | ✅ Captured | The Harness **Plugins** page (`Installed plugins`) showing **DeepSeek Peak Indicator** switched **on**, with its icon and description. |
 
-The four primary captures (01–04) are required. `05-plugin-manager.png` is optional but recommended
-for the Plugin Manager section.
+### Privacy handling in these captures
+
+The captures are genuine, but user content is redacted:
+
+- workspace names and session titles in the sidebar are blurred;
+- the `New folder` workspace chip above the composer is blurred;
+- the bottom account/status strip is cropped out;
+- a Windows notification that happened to be on screen was dismissed before capture.
+
+No API keys, account identifiers, unrelated desktop content or private files appear in the images.
 
 ---
 
-## Capture rules
+## 2. Still pending (not reproducible at capture time)
 
-- Use genuine screenshots of the running application. Do not recreate the UI in an editor.
-- PNG, preferably at the display's native scale (2× is fine); keep the width reasonable
-  (roughly 1200–2000 px). Crop to the application window.
-- Show both the pill and the popover clearly; do not crop the popover text.
-- **Remove personal information** before saving: session titles, workspace names/paths, account
-  e-mail, API keys, the remote-access token, and any other private content visible in the window.
-  Use a fresh blank Session or a throw-away workspace.
-- Do not add arrows, callouts or edited text over the screenshot; the README caption explains it.
-- Keep the UI language consistent within a capture (English is fine and matches the default
-  README examples).
+The remaining two screenshots require **real schedule states**. They must not be forced by changing
+the system clock, the plugin schedule or the holiday data.
 
-## How to produce each state
+### `02-popover-peak.png` — PEAK with the popover
 
-The plugin computes everything locally from the clock and `holidays.json`.
+- **Required real condition:** a Monday–Friday inside **01:00–04:00 UTC** or **06:00–10:00 UTC**,
+  on a date that is **not** a verified Chinese public holiday.
+- **At capture time (2026-10-30):** the real state was OFF-PEAK; the next real peak window is
+  **Monday 2026-11-02, 01:00 UTC** (= 05:30 Asia/Kabul).
+- **Target content:** `🔴 PEAK` / `Off-Peak starts in: Xh Ym` (hours and minutes only).
+- **How to capture later:** at that time, with the plugin installed, click the indicator in the
+  sidebar footer, wait until the popover shows `PEAK`, then capture the window. Use the same crop
+  and privacy rules as above and save as `02-popover-peak.png`.
 
-1. **OFF-PEAK (easiest):** capture on a Saturday/Sunday, on a Chinese public holiday, or on a
-   weekday before 01:00 UTC, between 04:00–06:00 UTC, or after 10:00 UTC. Click the pill.
-2. **PEAK:** capture on a Monday–Friday between 01:00–04:00 UTC or 06:00–10:00 UTC, on a date that is
-   not a verified Chinese public holiday (for example a normal working day in November 2026). Click
-   the pill.
-3. **UNKNOWN (real, reproducible):** UNKNOWN appears in a weekday peak window when the
-   **current year's holiday calendar is not verified**. The repository ships 2027 unverified, so
-   during 2027 weekday peak windows the state appears naturally. To capture it before then, in a
-   local development checkout:
-   1. In `holidays.json`, temporarily set the current year block to `"verified": false`
-      (keep a copy of the file or use git to restore it afterwards).
-   2. Run `node tools/sync-holidays.mjs`.
-   3. Reload the Harness GUI and wait for the next weekday peak window (01:00–04:00 or
-      06:00–10:00 UTC).
-   4. Take the screenshot, then restore `holidays.json` and re-run `node tools/sync-holidays.mjs`.
-   This is a genuine capture of the plugin's real UNKNOWN behaviour — only the local holiday data is
-   temporarily changed; no UI is mocked.
-4. **Plugin Manager (optional):** open **Plugins** in the Harness sidebar, find the bundle, and
-   capture the card with the On switch visible.
+### `04-popover-unknown.png` — UNKNOWN state
 
-## After capturing
+- **Required real condition:** a weekday inside a peak window in a year whose Chinese public-holiday
+  calendar is **not verified** in `holidays.json`.
+- **At capture time:** 2025 and 2026 are verified; 2027 is deliberately unverified (its State
+  Council notice is not published yet). The UNKNOWN state is therefore expected in **2027 weekday
+  peak windows** unless the 2027 calendar is verified before then.
+- **Target content:** `⚪ UNKNOWN` / `Next transition cannot be reliably determined.`
+- **How to capture later:** wait for 2027 (or ship a release with an unverified current year),
+  open the popover during a weekday peak window and capture it. Do not flip a verified year to
+  unverified just to force the state.
 
-1. Verify the files exist and are valid PNGs:
+---
 
-   ```sh
-   # from the repository root
-   ls -la docs/screenshots/
-   ```
+## 3. When the two pending captures are added
 
-2. Make sure the names match exactly (they are already referenced by `README.md`,
-   `README.fa.md`, `README.zh-CN.md` and `screenshots.json`).
-3. Commit the images:
-
-   ```sh
-   git add docs/screenshots/*.png
-   git commit -m "docs: add real GUI screenshots"
-   ```
-
-4. No README edits are required. The `screenshots.json` at the repository root already lists the
-   five files for marketplace storefronts.
+1. Save the files here with the exact names `02-popover-peak.png` and `04-popover-unknown.png`
+   (same `1920 × 951` content crop is recommended).
+2. Restore their image references in all three READMEs (`README.md`, `README.fa.md`,
+   `README.zh-CN.md`) in section 16, replacing the current “pending” paragraph.
+3. Add both paths to [`../../screenshots.json`](../../screenshots.json) so marketplace storefronts
+   show them (1–8 images allowed).
+4. Update this file's status table and the `CHANGELOG.md` entry.
+5. Commit the images to the repository — no other code change is needed.
