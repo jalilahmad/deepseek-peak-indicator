@@ -34,7 +34,7 @@ Sources checked on 2026-10-30:
 
 - Repository: `https://github.com/jalilahmad/deepseek-peak-indicator`
 - npm package name: `@jalilahmad.fazeli/deepseek-peak-indicator`
-- Current published version: `1.0.0`; next local version: `1.0.1` (not yet published)
+- Current published version: `1.0.1`
 - License: MIT
 - Author: Jalil Ahmad Fazeli — `https://github.com/jalilahmad`
 - Tested runtime: DeepSeek Harness Desktop `0.2.1-rc.5` (Windows)
@@ -165,15 +165,15 @@ Do not claim the plugin is listed on dshplugin.io until the site shows it.
 
 ## 6. npm publication
 
-Version `1.0.0` has been published to npm. Future releases are published by
+Versions `1.0.0` and `1.0.1` have been published to npm. Future releases are published by
 `.github/workflows/publish-npm.yml` when a `v*` Git tag is pushed. The workflow checks that the tag
 matches `package.json` and publishes with npm provenance. No long-lived npm token is stored in
 GitHub; publishing uses npm Trusted Publishing (OIDC).
 
-- One-time setup required in npm package settings: add a **GitHub Actions Trusted Publisher** for
-  owner `jalilahmad`, repository `deepseek-peak-indicator`, workflow
-  `publish-npm.yml`. Leave the environment blank; the workflow does not use a GitHub environment.
-  This account-level setup must be completed by an npm package maintainer.
+- npm package settings contain a **GitHub Actions Trusted Publisher** for owner `jalilahmad`,
+  repository `deepseek-peak-indicator`, workflow `publish-npm.yml`. Leave the environment blank;
+  the workflow does not use a GitHub environment. The first successful publish validated the
+  connection.
 - The package name is also the Harness module/package identity: `package.json`,
   `cordis.patch.yml` and the `client.js` module id were updated together. The plugin row id
   `deepseek-peak-indicator` and all runtime behaviour are unchanged.
@@ -195,8 +195,8 @@ GitHub; publishing uses npm Trusted Publishing (OIDC).
 
 1. Complete the one-time npm Trusted Publisher setup described in section 6.
 2. Commit and push the current changes to GitHub.
-3. Push tag `v1.0.1` to publish the prepared npm package; the workflow validates the tag before
-   publishing. Future versions use the same flow with a matching version and tag.
+3. For each future version, push a matching version tag (for example `v1.0.2`); the workflow
+   validates the tag before publishing.
 4. Verify the GitHub Actions run and the published package page; the install command remains
    `dsh plugin --profile web add @jalilahmad.fazeli/deepseek-peak-indicator`.
 5. Confirm the repository **description** and topics: `deepseek-harness`, `dsh-plugin`,
