@@ -7,15 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-06
+
 ### Changed
 
-- Prepared plugin version `1.0.1` to accept DSH `0.2.1-rc.5` and all later versions, including future
-  prereleases. This is a metadata-only compatibility change; plugin behavior is unchanged. The
-  existing `0.2.1-rc.5` runtime remains the only one verified in this repository. Later versions
-  are allowed by the version range but have not been tested here. No npm publication has been
-  performed.
-- Added a GitHub Actions release workflow that validates version tags, runs the test suite, and
-  publishes tagged versions to npm with provenance through Trusted Publishing.
+- Updated the DSH engine range to accept `0.2.1-rc.5` and all later versions, including future
+  prereleases. This metadata-only compatibility change does not alter plugin behavior. DSH
+  `0.2.1-rc.5` remains the only runtime verified in this repository; later versions may introduce
+  breaking changes.
+- Added a GitHub Actions release workflow that validates version tags and publishes tagged
+  versions to npm with provenance through Trusted Publishing.
+- Published version `1.0.1` to npm.
 
 ### Added
 
@@ -35,8 +37,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `1.0.0`). The Harness module/package identity was updated together in `package.json`,
   `cordis.patch.yml` and the `client.js` module id; the plugin row id
   `deepseek-peak-indicator` and all runtime behaviour are unchanged. Both npm and GitHub installs
-  now resolve the same package. Pre-npm installations under `@local/deepseek-peak-indicator` should
-  be removed and reinstalled. No npm publication has been performed.
+  now resolve the same package. The package was subsequently published as `1.0.0`; pre-npm
+  installations under `@local/deepseek-peak-indicator` should be removed and reinstalled.
 - Redesigned all three READMEs around a hero banner with installation moved to the top, a clearer
   feature/architecture story, and the same verified technical information in English, Persian and
   Simplified Chinese. Installation instructions now cover both npm and GitHub.
