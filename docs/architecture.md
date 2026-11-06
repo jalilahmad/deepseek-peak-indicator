@@ -47,8 +47,8 @@ dependency, and the Loader reads the manifest and the patch layer.
 - `dsh.client` tells the client module system that this package has a browser entry
   (`exports["./client"] → ./client.js`), may load it eagerly (`immediately: true`), and depends on
   the shipped sidebar package, which declares the slot this plugin uses.
-- `engines.dsh` pins the tested Harness version (`0.2.1-rc.5`), so DSH can refuse an untested
-  runtime instead of loading the plugin blindly.
+- `engines.dsh` accepts DSH `0.2.1-rc.5` and later versions, including prereleases. Only
+  `0.2.1-rc.5` has been verified in this repository; later versions may introduce breaking changes.
 
 ### `cordis.patch.yml` — the Loader patch
 

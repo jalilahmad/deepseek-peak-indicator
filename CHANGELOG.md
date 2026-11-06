@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Prepared plugin version `1.0.1` to accept DSH `0.2.1-rc.5` and all later versions, including future
+  prereleases. This is a metadata-only compatibility change; plugin behavior is unchanged. The
+  existing `0.2.1-rc.5` runtime remains the only one verified in this repository. Later versions
+  are allowed by the version range but have not been tested here. No npm publication has been
+  performed.
+- Added a GitHub Actions release workflow that validates version tags, runs the test suite, and
+  publishes tagged versions to npm with provenance through Trusted Publishing.
+
 ### Added
 
 - GitHub presentation assets: `assets/readme-banner.png` (README hero banner) and

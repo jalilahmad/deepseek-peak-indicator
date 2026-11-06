@@ -25,8 +25,8 @@ computed locally from the clock and a bundled, verified Chinese holiday calendar
 
 ## Install
 
-**Requires DeepSeek Harness Desktop v0.2.1-rc.5** — the version this release is built and tested
-against. No extra runtime, build step or npm dependency is needed.
+**Requires DeepSeek Harness Desktop v0.2.1-rc.5 or later.** The plugin's runtime behavior is
+unchanged. No extra runtime, build step or npm dependency is needed.
 
 The package is `@jalilahmad.fazeli/deepseek-peak-indicator`. Install it from npm or directly from
 GitHub:
@@ -227,9 +227,9 @@ The complete design, status algorithm, transition search and cleanup rules are i
 
 ## Compatibility and limitations
 
-- **Tested only on DeepSeek Harness Desktop v0.2.1-rc.5 (Windows).** Other DSH versions, clients and
-  platforms are not claimed compatible; `engines.dsh` pins the tested version so untested runtimes
-  are refused instead of loaded blindly.
+- **Verified on DeepSeek Harness Desktop v0.2.1-rc.5 (Windows).** `engines.dsh` allows this version
+  and all later DSH versions, including prereleases; later versions are not verified here and may
+  introduce breaking changes. Other clients and platforms are not claimed compatible.
 - **Windows collapsed sidebar.** On the Windows titlebar layout the shipped sidebar shell hides its
   entire footer when the sidebar is collapsed (including the shipped Settings control), so the
   indicator is visible in the default expanded sidebar but not in that collapsed state. The

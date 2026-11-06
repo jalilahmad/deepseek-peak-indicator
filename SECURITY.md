@@ -5,10 +5,12 @@
 | Plugin version | DeepSeek Harness version | Status |
 | --- | --- | --- |
 | 1.0.0 | 0.2.1-rc.5 (Desktop, Windows) | Supported |
+| 1.0.1 | 0.2.1-rc.5 and later (Desktop) | Declared; later versions unverified |
 
-Only the combination above has been built and verified. Other plugin versions or other Harness
-versions are not claimed supported; the bundle declares `"engines": { "dsh": "0.2.1-rc.5" }` so an
-untested runtime is refused rather than loaded blindly.
+Plugin 1.0.0 was verified on DSH 0.2.1-rc.5 (Windows). Plugin 1.0.1's `engines.dsh` range accepts
+that version and all later versions, including prereleases. Only 0.2.1-rc.5 has been verified in
+this repository; later DSH versions may introduce breaking changes. Other plugin versions are not
+claimed supported.
 
 ## Reporting a vulnerability
 

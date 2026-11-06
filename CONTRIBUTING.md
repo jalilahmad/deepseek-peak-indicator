@@ -7,9 +7,10 @@ dependency-free DSH plugin, and the contribution process is kept accordingly sma
 
 - Read [`docs/architecture.md`](docs/architecture.md) to understand how the bundle, the Client half
   and the sidebar slot registration fit together.
-- The project targets **DeepSeek Harness Desktop v0.2.1-rc.5**. Compatibility with other DSH
-  versions is not claimed; changes that depend on another runtime API need a verified environment
-  and an update to `engines.dsh` plus documentation.
+- The project declares compatibility with **DeepSeek Harness Desktop v0.2.1-rc.5 and later versions**.
+  Only v0.2.1-rc.5 has been verified in this repository; later versions may introduce breaking
+  changes. Changes that depend on another runtime API need a verified environment and an update to
+  `engines.dsh` plus documentation.
 - Keep the scope tight: this plugin shows the official DeepSeek pricing period and nothing else.
   Charts, dashboards, analytics, model switching and network polling are out of scope.
 

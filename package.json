@@ -1,6 +1,6 @@
 {
   "name": "@jalilahmad.fazeli/deepseek-peak-indicator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Sidebar-foot DeepSeek API peak / off-peak pricing indicator with a minimal countdown popover.",
   "license": "MIT",
@@ -33,7 +33,7 @@
     "cordis-plugin"
   ],
   "engines": {
-    "dsh": "0.2.1-rc.5"
+    "dsh": ">=0.2.1-rc.5"
   },
   "exports": {
     ".": "./index.js",

@@ -25,7 +25,7 @@
 
 ## 安装
 
-**需要 DeepSeek Harness Desktop v0.2.1-rc.5**——本版本正是针对该版本构建并验证的。无需额外的
+**需要 DeepSeek Harness Desktop v0.2.1-rc.5 或更高版本。** 插件运行行为保持不变。无需额外的
 运行时、构建步骤或 npm 依赖。
 
 包名为 `@jalilahmad.fazeli/deepseek-peak-indicator`。可从 npm 或直接从 GitHub 安装：
@@ -212,8 +212,9 @@ Next transition cannot be reliably determined.
 
 ## 兼容性与已知限制
 
-- **仅测试过 DeepSeek Harness Desktop v0.2.1-rc.5（Windows）。** 不声称兼容其他 DSH 版本、客户端
-  和平台；`engines.dsh` 固定了已测试的版本，因此未经测试的运行时会被拒绝，而不是盲目加载。
+- **已在 DeepSeek Harness Desktop v0.2.1-rc.5（Windows）上验证。** `engines.dsh` 允许此版本及
+  所有更高版本（包括未来预发布版本）；更高版本尚未在本仓库中验证，可能引入不兼容变更。不声明兼容其他
+  客户端或平台。
 - **Windows 折叠侧边栏。** 在 Windows 标题栏布局下，随附的侧边栏外壳在侧边栏折叠时会隐藏其整个
   页脚（包括随附的 Settings 控件），因此指示器在默认展开的侧边栏中可见，但在折叠状态下不可见。
   在外壳确实渲染页脚的 56 px 窄栏中，会使用只有圆点的紧凑形态。
